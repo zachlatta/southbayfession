@@ -1,9 +1,12 @@
 package misc
 
 import (
+	"errors"
 	"net/url"
 	"os"
+	"regexp"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/ChimeraCoder/anaconda"
@@ -72,13 +75,78 @@ func TweetsAfter(api *anaconda.TwitterApi, tweet *models.Tweet) (
 
 	tweets := make([]models.Tweet, len(anacondaTweets))
 	for i, t := range anacondaTweets {
-		tweets[i] = models.Tweet{
+		tweet := models.Tweet{
 			CreatedAt: t.CreatedAt,
 			TwitterId: t.Id,
 			Text:      t.Text,
-			School:    "ESHS",
 		}
+
+		school, err := SchoolOfTweet(&tweet)
+		if err != nil {
+			tweet.School = "N/A"
+		} else {
+			tweet.School = school
+		}
+
+		tweets[i] = tweet
 	}
 
 	return tweets, nil
+}
+
+func SchoolOfTweet(tweet *models.Tweet) (string, error) {
+	schoolRegex := regexp.MustCompile(`( |\w)*$`)
+
+	potentialSchools := map[string][]string{
+		"Da Vinci Communications": []string{
+			"davinci communications",
+		},
+		"El Segundo High School": []string{
+			"es",
+			"eshs",
+			"el segundo",
+			"gundo",
+		},
+		"Harbor Teacher Preparation Academy": []string{
+			"htpa",
+		},
+		"North High School": []string{
+			"north high",
+			"north",
+		},
+		"Santa Monica High School": []string{
+			"samohi",
+		},
+		"Torrance High School": []string{
+			"torrance high",
+		},
+		"Hawthorne Math and Science Academy": []string{
+			"hmsa",
+			"hms",
+		},
+		"West High School": []string{
+			"west",
+			"west torrance high school",
+			"west high sko",
+		},
+	}
+
+	matchedSchool := schoolRegex.FindString(tweet.Text)
+	matchedSchool = strings.TrimSpace(matchedSchool)
+	matchedSchool = strings.ToLower(matchedSchool)
+
+	var school string
+	for potentialSchool, potentialMatches := range potentialSchools {
+		for _, potentialMatch := range potentialMatches {
+			if matchedSchool == potentialMatch {
+				school = potentialSchool
+			}
+		}
+	}
+
+	if len(school) == 0 {
+		return school, errors.New("No school matched.")
+	}
+
+	return school, nil
 }
