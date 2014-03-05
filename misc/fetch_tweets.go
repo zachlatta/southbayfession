@@ -5,7 +5,6 @@ import (
 	"net/url"
 	"os"
 	"regexp"
-	"strconv"
 	"strings"
 	"time"
 
@@ -56,7 +55,7 @@ func GetLastTweet(api *anaconda.TwitterApi, db gorp.SqlExecutor) (*models.Tweet,
 
 	var tweet *models.Tweet
 	if len(tweets) == 0 {
-		tweet = &models.Tweet{TwitterId: 1}
+		tweet = &models.Tweet{TwitterId: "1"}
 	} else {
 		tweet = &tweets[0]
 	}
@@ -67,7 +66,7 @@ func TweetsAfter(api *anaconda.TwitterApi, tweet *models.Tweet) (
 	[]models.Tweet, error) {
 	anacondaTweets, err := api.GetUserTimeline(url.Values{
 		"screen_name": []string{"Southbayfession"},
-		"since_id":    []string{strconv.FormatInt(tweet.TwitterId, 10)},
+		"since_id":    []string{tweet.TwitterId},
 	})
 	if err != nil {
 		return nil, err
@@ -77,7 +76,7 @@ func TweetsAfter(api *anaconda.TwitterApi, tweet *models.Tweet) (
 	for i, t := range anacondaTweets {
 		tweet := models.Tweet{
 			CreatedAt: t.CreatedAt,
-			TwitterId: t.Id,
+			TwitterId: t.IdStr,
 			Text:      t.Text,
 		}
 
