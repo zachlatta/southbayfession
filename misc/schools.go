@@ -13,6 +13,10 @@ var Schools = map[string][]string{
 	"Harbor Teacher Preparation Academy": []string{
 		"htpa",
 	},
+	"Hawthorne Math and Science Academy": []string{
+		"hmsa",
+		"hms",
+	},
 	"North High School": []string{
 		"north high",
 		"north",
@@ -22,10 +26,6 @@ var Schools = map[string][]string{
 	},
 	"Torrance High School": []string{
 		"torrance high",
-	},
-	"Hawthorne Math and Science Academy": []string{
-		"hmsa",
-		"hms",
 	},
 	"West High School": []string{
 		"west",
