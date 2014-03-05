@@ -1,7 +1,6 @@
 package misc
 
 import (
-	"fmt"
 	"net/url"
 	"os"
 	"strconv"
@@ -40,7 +39,6 @@ func FetchAndCommitLatestTweets(api *anaconda.TwitterApi, db gorp.SqlExecutor) {
 	for _, tweet := range tweets {
 		err := db.Insert(&tweet)
 		if err != nil {
-			fmt.Println(err)
 			return
 		}
 	}
