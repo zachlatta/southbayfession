@@ -32,6 +32,8 @@ func init() {
     Dbm.TypeConverter = CustomTypeConverter{}
 
     
+    Dbm.AddTableWithName(Tweet{}, "tweets").SetKeys(true, "Id")
+    
 
     //Dbm.TraceOn("[gorp]", r.INFO)
     err = Dbm.CreateTablesIfNotExists()

@@ -1,5 +1,47 @@
 {
 	"baseName": "southbayfession",
-	"entities": [],
+	"entities": [
+		{
+			"name": "tweet",
+			"attrs": [
+				{
+					"attrName": "createdAt",
+					"attrType": "String",
+					"attrImplType": "string",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "twitterId",
+					"attrType": "Integer",
+					"attrImplType": "int64",
+					"min": "",
+					"max": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "text",
+					"attrType": "String",
+					"attrImplType": "string",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "school",
+					"attrType": "String",
+					"attrImplType": "string",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				}
+			]
+		}
+	],
 	"resources": []
 }
