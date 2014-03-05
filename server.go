@@ -1,15 +1,16 @@
 package main
 
 import (
-	"./models"
-	"./routes"
 	//"log"
 	"net/http"
 	"regexp"
 	"strings"
+
 	"github.com/codegangsta/martini"
 	"github.com/coopernurse/gorp"
 	"github.com/zachlatta/southbayfession/misc"
+	"github.com/zachlatta/southbayfession/models"
+	"github.com/zachlatta/southbayfession/routes"
 )
 
 // The one and only martini instance.
