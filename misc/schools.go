@@ -21,8 +21,20 @@ var Schools = map[string][]string{
 		"north high",
 		"north",
 	},
+	"Palos Verdes High School": []string{
+		"pv",
+		"palos verdes hs",
+	},
+	"Palos Verdes Peninsula High School": []string{
+		"pvphs",
+	},
 	"Santa Monica High School": []string{
 		"samohi",
+		"smhs",
+	},
+	"South Pasadena High School": []string{
+		"sphs",
+		"south pasadena high school",
 	},
 	"Torrance High School": []string{
 		"torrance high",
