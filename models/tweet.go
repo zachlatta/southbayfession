@@ -5,7 +5,7 @@ type Tweet struct {
 
 	CreatedAt string `json:"createdAt"`
 
-	TwitterId string `json:"twitterId"`
+	TwitterId int64 `json:"twitterId,string"`
 
 	Text string `json:"text"`
 
