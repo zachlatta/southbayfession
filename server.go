@@ -8,7 +8,6 @@ import (
 	"regexp"
 	"strings"
 	"github.com/codegangsta/martini"
-	"github.com/codegangsta/martini-contrib/binding"
 	"github.com/coopernurse/gorp"
 	"github.com/zachlatta/southbayfession/misc"
 )
@@ -25,12 +24,6 @@ func init() {
 	m.Use(MapEncoder)
 	// Setup routes
 	r := martini.NewRouter()
-
-	r.Get(`/southbayfession/tweets`, routes.GetTweets)
-	r.Get(`/southbayfession/tweets/:id`, routes.GetTweet)
-	r.Post(`/southbayfession/tweets`, binding.Json(models.Tweet{}), routes.AddTweet)
-	r.Put(`/southbayfession/tweets/:id`, binding.Json(models.Tweet{}), routes.UpdateTweet)
-	r.Delete(`/southbayfession/tweets/:id`, routes.DeleteTweet)
 
 	r.Get(`/southbayfession/schools`, routes.GetSchools)
 	r.Get(`/southbayfession/schools/:id`, routes.GetSchool)
