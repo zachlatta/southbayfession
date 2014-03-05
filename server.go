@@ -32,6 +32,9 @@ func init() {
 	r.Put(`/southbayfession/tweets/:id`, binding.Json(models.Tweet{}), routes.UpdateTweet)
 	r.Delete(`/southbayfession/tweets/:id`, routes.DeleteTweet)
 
+	r.Get(`/southbayfession/schools`, routes.GetSchools)
+	r.Get(`/southbayfession/schools/:id`, routes.GetSchool)
+
 	// Inject database
 	m.MapTo(models.Dbm, (*gorp.SqlExecutor)(nil))
 	// Add the router action

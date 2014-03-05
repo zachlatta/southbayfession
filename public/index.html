@@ -14,7 +14,7 @@
 <body>
   <div class="container-fluid">
     <div class="row-fluid">
-      <div class="navbar navbar-inverse">
+      <div class="navbar navbar-inverse" ng-controller="NavController">
         <div class="navbar-inner">
           <div class="container-fluid">
             <a class="brand" href="#">Southbayfession</a>
@@ -22,6 +22,18 @@
               
               <li>
                 <a href="/#/tweets">Tweets</a>
+              </li>
+
+              <li class="dropdown">
+                <a class="dropdown-toggle">
+                  Schools
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li ng-repeat="school in schools">
+                    <a href="/#/schools/{{school.id}}">{{school.name}}</a>
+                  </li>
+                </ul>
               </li>
               
             </ul>
@@ -42,10 +54,15 @@
 
   <script src="js/app.js"></script>
   <script src="js/home/home-controller.js"></script>
+  <script src="js/nav/nav-controller.js"></script>
   
   <script src="js/tweet/tweet-controller.js"></script>
   <script src="js/tweet/tweet-router.js"></script>
   <script src="js/tweet/tweet-service.js"></script>
+
+  <script src="js/school/school-controller.js"></script>
+  <script src="js/school/school-router.js"></script>
+  <script src="js/school/school-service.js"></script>
   
 </body>
 </html>
