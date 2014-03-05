@@ -1,1 +1,1 @@
-web: ./southbayfession
+web: southbayfession
