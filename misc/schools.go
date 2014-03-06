@@ -28,6 +28,7 @@ var Schools = map[string][]string{
 	"Palos Verdes High School": []string{
 		"pv",
 		"palos verdes hs",
+		"palos verdes high school",
 	},
 	"Palos Verdes Peninsula High School": []string{
 		"pvphs",
