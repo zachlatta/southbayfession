@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"os"
 	"reflect"
 	"time"
 
@@ -26,18 +27,42 @@ type JDate time.Time
 type CustomTypeConverter struct{}
 
 func init() {
-	log.Println("Opening db...")
-	db, err := sql.Open("sqlite3", "/tmp/my.db")
-	checkErr(err, "opening db failed")
-	Dbm = &gorp.DbMap{Db: db, Dialect: gorp.SqliteDialect{}}
+	Dbm = newDbMap()
 	Dbm.TypeConverter = CustomTypeConverter{}
 
 	Dbm.AddTableWithName(Tweet{}, "tweets").SetKeys(true, "Id")
 
 	//Dbm.TraceOn("[gorp]", r.INFO)
-	err = Dbm.CreateTablesIfNotExists()
+	err := Dbm.CreateTablesIfNotExists()
 	checkErr(err, "create tables failed")
 
+}
+
+func newDbMap() *gorp.DbMap {
+	dialect, driver := dialectAndDriver()
+	return &gorp.DbMap{Db: connect(driver), Dialect: dialect}
+}
+
+func dialectAndDriver() (gorp.Dialect, string) {
+	switch os.Getenv("ENV") {
+	case "PRODUCTION":
+		return gorp.PostgresDialect{}, "postgres"
+	default:
+		return gorp.SqliteDialect{}, "sqlite3"
+	}
+}
+
+func connect(driver string) *sql.DB {
+	dsn := os.Getenv("DB_DSN")
+	if dsn == "" {
+		panic("DB_DSN env variable is not set")
+	}
+
+	db, err := sql.Open(driver, dsn)
+	if err != nil {
+		panic("Error connecting to db: " + err.Error())
+	}
+	return db
 }
 
 func (d JDate) MarshalJSON() ([]byte, error) {
