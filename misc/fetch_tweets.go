@@ -32,20 +32,20 @@ func FetchLatestTweetsManager() {
 func FetchAndCommitLatestTweets(api *anaconda.TwitterApi, db gorp.SqlExecutor) {
 	lastTweet, err := GetLastTweet(api, db)
 	if err != nil {
-		log.Panic(err)
+		log.Println(err)
 		return
 	}
 
 	tweets, err := TweetsAfter(api, lastTweet)
 	if err != nil {
-		log.Panic(err)
+		log.Println(err)
 		return
 	}
 
 	for _, tweet := range tweets {
 		err := db.Insert(&tweet)
 		if err != nil {
-			log.Panic(err)
+			log.Println(err)
 			return
 		}
 	}

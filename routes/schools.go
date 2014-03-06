@@ -2,6 +2,7 @@ package routes
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"sort"
 	"strconv"
@@ -41,6 +42,7 @@ func GetSchool(enc Encoder, db gorp.SqlExecutor, parms martini.Params) (int, str
 	var school School
 	id, err := strconv.Atoi(parms["id"])
 	if err != nil {
+		log.Println(err)
 		return http.StatusConflict, ""
 	}
 
@@ -55,8 +57,9 @@ func GetSchool(enc Encoder, db gorp.SqlExecutor, parms martini.Params) (int, str
 	school.Id = id
 	school.Name = schoolNames[id]
 
-	_, err = db.Select(&school.Tweets, fmt.Sprintf("select * from tweets where `school` = '%s' order by id desc", school.Name))
+	_, err = db.Select(&school.Tweets, fmt.Sprintf("select * from tweets where school = '%s' order by id desc", school.Name))
 	if err != nil {
+		log.Println(err)
 		return http.StatusConflict, ""
 	}
 
