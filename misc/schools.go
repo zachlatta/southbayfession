@@ -17,6 +17,10 @@ var Schools = map[string][]string{
 		"hmsa",
 		"hms",
 	},
+	"Lawndale High School": []string{
+		"lawndale",
+		"lawndale high",
+	},
 	"North High School": []string{
 		"north high",
 		"north",
@@ -31,6 +35,9 @@ var Schools = map[string][]string{
 	"Santa Monica High School": []string{
 		"samohi",
 		"smhs",
+	},
+	"South High School": []string{
+		"south high school",
 	},
 	"South Pasadena High School": []string{
 		"sphs",
