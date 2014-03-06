@@ -27,15 +27,14 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li ng-repeat="school in schools">
-                    <a href="/#/schools/{{school.id}}">{{school.name}}</a>
+                    <a href="/#/schools/{{school.id}}/{{school.name | snakeCase}}">{{school.name}}</a>
                   </li>
                 </ul>
               </li>
               
             </ul>
           </div>
-        </div>
-      </div>
+        </div> </div>
     </div>
   </div>
   <div class="container-fluid" ng-view></div>
@@ -67,6 +66,8 @@
   <script src="js/school/school-controller.js"></script>
   <script src="js/school/school-router.js"></script>
   <script src="js/school/school-service.js"></script>
+
+  <script src="js/filter/snake-case.js"></script>
   
 </body>
 </html>
