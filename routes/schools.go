@@ -55,7 +55,7 @@ func GetSchool(enc Encoder, db gorp.SqlExecutor, parms martini.Params) (int, str
 	school.Id = id
 	school.Name = schoolNames[id]
 
-	_, err = db.Select(&school.Tweets, fmt.Sprintf("select * from tweets where `school` = '%s'", school.Name))
+	_, err = db.Select(&school.Tweets, fmt.Sprintf("select * from tweets where `school` = '%s' order by id desc", school.Name))
 	if err != nil {
 		return http.StatusConflict, ""
 	}
