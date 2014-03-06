@@ -53,7 +53,7 @@ func FetchAndCommitLatestTweets(api *anaconda.TwitterApi, db gorp.SqlExecutor) {
 
 func GetLastTweet(api *anaconda.TwitterApi, db gorp.SqlExecutor) (*models.Tweet, error) {
 	var tweets []models.Tweet
-	_, err := db.Select(&tweets, "select * from tweets order by id limit 1")
+	_, err := db.Select(&tweets, "select * from tweets order by id desc limit 1")
 	if err != nil {
 		return nil, err
 	}
@@ -64,6 +64,7 @@ func GetLastTweet(api *anaconda.TwitterApi, db gorp.SqlExecutor) (*models.Tweet,
 	} else {
 		tweet = &tweets[0]
 	}
+
 	return tweet, nil
 }
 
@@ -92,7 +93,7 @@ func TweetsAfter(api *anaconda.TwitterApi, tweet *models.Tweet) (
 			tweet.School = school
 		}
 
-		tweets[i] = tweet
+		tweets[len(tweets)-1-i] = tweet
 	}
 
 	return tweets, nil
