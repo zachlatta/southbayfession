@@ -13,6 +13,9 @@ var Schools = map[string][]string{
 	"Harbor Teacher Preparation Academy": []string{
 		"htpa",
 	},
+	"Hawthorne High School": []string{
+		"hawthorn high",
+	},
 	"Hawthorne Math and Science Academy": []string{
 		"hmsa",
 		"hms",
@@ -20,6 +23,15 @@ var Schools = map[string][]string{
 	"Lawndale High School": []string{
 		"lawndale",
 		"lawndale high",
+	},
+	"Mary Star of the Sea High School": []string{
+		"mary star high",
+		"mary star",
+	},
+	"Mira Costa High School": []string{
+		"mira costa",
+		"mira costa high",
+		"mira costa high school",
 	},
 	"North High School": []string{
 		"north high",
@@ -39,6 +51,8 @@ var Schools = map[string][]string{
 	},
 	"South High School": []string{
 		"south high school",
+		"south",
+		"shs",
 	},
 	"South Pasadena High School": []string{
 		"sphs",
