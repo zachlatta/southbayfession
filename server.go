@@ -21,6 +21,7 @@ func init() {
 	// Setup middleware
 	m.Use(martini.Recovery())
 	m.Use(martini.Logger())
+	m.Use(misc.Prerender)
 	m.Use(martini.Static("public"))
 	m.Use(MapEncoder)
 	// Setup routes

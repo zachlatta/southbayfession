@@ -17,3 +17,6 @@ To run the application you'll need to set a few environment variables.
   * In the production environment this should be a Postgres URL. Ex.
     `postgres://username:password@host:port/db`
 * `ENV` - Set this to `PRODUCTION` when in a production environment.
+* `PRERENDER_URL` - URL for http://prerender.io service. Ex.
+  `https://service.prerender.io/http.yourwebsite.com`. Must not have a trailing
+  slash.

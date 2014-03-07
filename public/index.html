@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="fragment" content="!">
   <title>Southbayfession</title>
   <link href="lib/bootstrap-css/css/bootstrap.css" rel="stylesheet">
   <link href="lib/bootstrap-css/css/bootstrap-responsive.css" rel="stylesheet">
@@ -36,7 +37,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li ng-repeat="school in schools">
-                    <a href="/#/schools/{{school.id}}/{{school.name | snakeCase}}">{{school.name}}</a>
+                    <a href="/#!/schools/{{school.id}}/{{school.name | snakeCase}}">{{school.name}}</a>
                   </li>
                 </ul>
               </li>
