@@ -23,7 +23,7 @@ func Prerender(res http.ResponseWriter, req *http.Request) {
 	}
 
 	if regexp.MustCompile(`Prerender`).MatchString(req.UserAgent()) {
-		prerender = true
+		prerender = false
 	}
 
 	if fileExtensions.MatchString(req.URL.Path) {
