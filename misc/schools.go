@@ -24,6 +24,11 @@ var Schools = map[string][]string{
 		"lawndale",
 		"lawndale high",
 	},
+	"Leuzinger High School": []string{
+		"leuzinger hs",
+		"leuzinger high school",
+		"leuzinger",
+	},
 	"Mary Star of the Sea High School": []string{
 		"mary star high",
 		"mary star",
