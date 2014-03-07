@@ -1,0 +1,22 @@
+<div ng-controller="LatestTweetsController">
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Text</th>
+          <th>School</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="tweet in tweets">
+          <td>{{tweet.text}}</td>
+          <td>{{tweet.school}}</td>
+
+          <td>
+            <a href="{{twitterUrl(tweet)}}" class="btn">Link on Twitter</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

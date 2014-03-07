@@ -29,6 +29,8 @@ func init() {
 	r.Get(`/southbayfession/schools`, routes.GetSchools)
 	r.Get(`/southbayfession/schools/:id`, routes.GetSchool)
 
+	r.Get(`/southbayfession/tweets`, routes.GetTweets)
+
 	// Inject database
 	m.MapTo(models.Dbm, (*gorp.SqlExecutor)(nil))
 	// Add the router action
