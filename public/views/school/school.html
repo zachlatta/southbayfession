@@ -1,16 +1,16 @@
-<div>
-  <h3 ng-hide="school.tweets.length">No tweets found.</h3>
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <tbody>
-        <tr ng-repeat="tweet in school.tweets">
-          <td>{{tweet.text}}</td>
+<h1>{{school.name}}</h1>
 
-          <td>
-            <a href="{{twitterUrl(tweet)}}" class="btn">View on Twitter</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<h3 ng-hide="school.tweets.length">No tweets found.</h3>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <tbody>
+      <tr ng-repeat="tweet in school.tweets">
+        <td>{{tweet.text}}</td>
+
+        <td>
+          <a href="{{twitterUrl(tweet)}}" class="btn">View on Twitter</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
