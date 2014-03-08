@@ -56,6 +56,7 @@ var Schools = map[string][]string{
 	},
 	"South High School": []string{
 		"south high school",
+		"south high",
 		"south",
 		"shs",
 	},
