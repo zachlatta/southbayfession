@@ -39,6 +39,7 @@ var Schools = map[string][]string{
 		"mary star",
 	},
 	"Mira Costa High School": []string{
+		"costa",
 		"mira costa",
 		"mira costa high",
 		"mira costa high school",
@@ -75,6 +76,7 @@ var Schools = map[string][]string{
 	},
 	"West High School": []string{
 		"west",
+		"west high",
 		"west torrance high school",
 		"west high sko",
 	},
