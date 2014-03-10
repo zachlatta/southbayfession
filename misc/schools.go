@@ -1,6 +1,11 @@
 package misc
 
 var Schools = map[string][]string{
+	"Banning High School": []string{
+		"banning high school",
+		"banning high",
+		"banning",
+	},
 	"Da Vinci Communications": []string{
 		"davinci communications",
 	},
@@ -60,9 +65,10 @@ var Schools = map[string][]string{
 		"south",
 		"shs",
 	},
-	"South Pasadena High School": []string{
+	"San Pedro High School": []string{
 		"sphs",
-		"south pasadena high school",
+		"san pedro",
+		"san pedro high school",
 	},
 	"Torrance High School": []string{
 		"torrance high",
