@@ -19,7 +19,7 @@ var Schools = map[string][]string{
 		"htpa",
 	},
 	"Hawthorne High School": []string{
-		"hawthorn high",
+		"hawthorne high",
 	},
 	"Hawthorne Math and Science Academy": []string{
 		"hmsa",
