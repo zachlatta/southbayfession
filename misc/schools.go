@@ -35,6 +35,7 @@ var Schools = map[string][]string{
 	"Lawndale High School": []string{
 		"lawndale",
 		"lawndale high",
+		"lawndale high school",
 		"lawndale hs",
 	},
 	"Leuzinger High School": []string{
@@ -64,6 +65,11 @@ var Schools = map[string][]string{
 	},
 	"Palos Verdes Peninsula High School": []string{
 		"pvphs",
+	},
+	"Redondo Union High School": []string{
+		"redondo union high school",
+		"redondo high",
+		"redondo",
 	},
 	"Santa Monica High School": []string{
 		"samohi",
