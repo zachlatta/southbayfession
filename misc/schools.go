@@ -6,6 +6,10 @@ var Schools = map[string][]string{
 		"banning high",
 		"banning",
 	},
+	"California Academy of Mathematics and Science": []string{
+		"california academy of mathematics and science",
+		"cams",
+	},
 	"Da Vinci Communications": []string{
 		"davinci communications",
 	},
@@ -19,7 +23,10 @@ var Schools = map[string][]string{
 		"htpa",
 	},
 	"Hawthorne High School": []string{
+		"hawthorne high school",
 		"hawthorne high",
+		"hawthorne hs",
+		"hhs",
 	},
 	"Hawthorne Math and Science Academy": []string{
 		"hmsa",
@@ -28,6 +35,7 @@ var Schools = map[string][]string{
 	"Lawndale High School": []string{
 		"lawndale",
 		"lawndale high",
+		"lawndale hs",
 	},
 	"Leuzinger High School": []string{
 		"leuzinger hs",
@@ -50,6 +58,7 @@ var Schools = map[string][]string{
 	},
 	"Palos Verdes High School": []string{
 		"pv",
+		"pvhs",
 		"palos verdes hs",
 		"palos verdes high school",
 	},
