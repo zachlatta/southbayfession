@@ -19,6 +19,13 @@ var Schools = map[string][]string{
 		"el segundo",
 		"gundo",
 	},
+	"Glendale High School": []string{
+		"glendale high school",
+		"ghs",
+		"glendale",
+		"glendale high",
+		"glendale hs",
+	},
 	"Harbor Teacher Preparation Academy": []string{
 		"htpa",
 	},
@@ -48,6 +55,7 @@ var Schools = map[string][]string{
 		"mary star",
 	},
 	"Mira Costa High School": []string{
+		"mchs",
 		"costa",
 		"mira costa",
 		"mira costa high",
@@ -90,9 +98,18 @@ var Schools = map[string][]string{
 		"torrance high",
 	},
 	"West High School": []string{
+		"whs",
 		"west",
 		"west high",
+		"west high school",
 		"west torrance high school",
 		"west high sko",
+	},
+	"West Valley High School": []string{
+		"wvhs",
+		"west valley",
+		"west valley hs",
+		"west valley high",
+		"west valley high school",
 	},
 }
