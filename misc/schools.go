@@ -73,6 +73,7 @@ var Schools = map[string][]string{
 	},
 	"Palos Verdes Peninsula High School": []string{
 		"pvphs",
+		"peninsula",
 	},
 	"Redondo Union High School": []string{
 		"redondo union high school",
