@@ -30,6 +30,8 @@ type CustomTypeConverter struct{}
 func init() {
 	Dbm = newDbMap()
 	Dbm.TypeConverter = CustomTypeConverter{}
+
+	Dbm.AddTable(Tweet{}).SetKeys(true, "Id")
 }
 
 func newDbMap() *gorp.DbMap {

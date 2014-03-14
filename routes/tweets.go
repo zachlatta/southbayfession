@@ -10,7 +10,7 @@ import (
 
 func GetTweets(enc Encoder, db gorp.SqlExecutor) (int, string) {
 	var tweets []models.Tweet
-	_, err := db.Select(&tweets, "select * from tweets order by id desc limit 20")
+	_, err := db.Select(&tweets, "select * from Tweet order by Id desc limit 20")
 	if err != nil {
 		log.Println(err)
 		return http.StatusInternalServerError, ""
