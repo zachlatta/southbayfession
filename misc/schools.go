@@ -1,6 +1,13 @@
 package misc
 
 var Schools = map[string][]string{
+	"Animo Leadership Charter High School": []string{
+		"animo",
+		"animo leadership",
+		"animo leadership high",
+		"animo high",
+		"animo hs",
+	},
 	"Banning High School": []string{
 		"banning high school",
 		"banning high",
@@ -9,6 +16,12 @@ var Schools = map[string][]string{
 	"California Academy of Mathematics and Science": []string{
 		"california academy of mathematics and science",
 		"cams",
+	},
+	"Carson High School": []string{
+		"carson high school",
+		"carson",
+		"carson hs",
+		"carson high",
 	},
 	"Da Vinci Communications": []string{
 		"davinci communications",
@@ -74,6 +87,7 @@ var Schools = map[string][]string{
 	"Palos Verdes Peninsula High School": []string{
 		"pvphs",
 		"peninsula",
+		"pen",
 	},
 	"Redondo Union High School": []string{
 		"redondo union high school",
@@ -88,6 +102,8 @@ var Schools = map[string][]string{
 		"south high school",
 		"south high",
 		"south",
+		"south torrance",
+		"south torrance high",
 		"shs",
 	},
 	"San Pedro High School": []string{
@@ -97,6 +113,7 @@ var Schools = map[string][]string{
 	},
 	"Torrance High School": []string{
 		"torrance high",
+		"ths",
 	},
 	"West High School": []string{
 		"whs",
