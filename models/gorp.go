@@ -10,6 +10,7 @@ import (
 	"reflect"
 	"time"
 
+	"github.com/codegangsta/martini"
 	"github.com/coopernurse/gorp"
 	_ "github.com/lib/pq"
 	_ "github.com/mattn/go-sqlite3"
@@ -40,18 +41,18 @@ func newDbMap() *gorp.DbMap {
 }
 
 func dialectAndDriver() (gorp.Dialect, string) {
-	switch os.Getenv("ENV") {
-	case "PRODUCTION":
-		return gorp.PostgresDialect{}, "postgres"
-	default:
-		return gorp.SqliteDialect{}, "sqlite3"
-	}
+	return gorp.PostgresDialect{}, "postgres"
 }
 
 func connect(driver string) *sql.DB {
-	dsn := os.Getenv("DATABASE_URL")
-	if dsn == "" {
-		panic("DATABASE_URL env variable is not set")
+	dsn := fmt.Sprintf("postgres://docker:docker@%s/docker",
+		os.Getenv("DB_1_PORT_5432_TCP_ADDR"))
+
+	if martini.Env == martini.Prod {
+		dsn = os.Getenv("DATABASE_URL")
+		if dsn == "" {
+			panic("DATABASE_URL env variable not set")
+		}
 	}
 
 	db, err := sql.Open(driver, dsn)
