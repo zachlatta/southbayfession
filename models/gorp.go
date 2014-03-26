@@ -49,9 +49,9 @@ func dialectAndDriver() (gorp.Dialect, string) {
 }
 
 func connect(driver string) *sql.DB {
-	dsn := os.Getenv("DB_DSN")
+	dsn := os.Getenv("DATABASE_URL")
 	if dsn == "" {
-		panic("DB_DSN env variable is not set")
+		panic("DATABASE_URL env variable is not set")
 	}
 
 	db, err := sql.Open(driver, dsn)

@@ -11,7 +11,7 @@ To run the application you'll need to set a few environment variables.
 * `TWITTER_CONSUMER_SECRET` - Consumer secret for Twitter API
 * `TWITTER_ACCESS_TOKEN` - Access token for Twitter API
 * `TWITTER_ACCESS_TOKEN_SECRET` - Access token secret for Twitter API
-* `DB_DSN` - Destination of the database.
+* `DATABASE_URL` - Destination of the database.
   * In the debug environment this should be a filesystem path for SQLite. Ex.
     `/tmp/my.db`.
   * In the production environment this should be a Postgres URL. Ex.

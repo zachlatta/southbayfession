@@ -1,7 +1,7 @@
 development:
   driver: sqlite3
-  open: $DB_DSN
+  open: $DATABASE_URL
 
 production:
   driver: postgres
-  open: $DB_DSN
+  open: $DATABASE_URL
