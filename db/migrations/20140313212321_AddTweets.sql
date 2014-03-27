@@ -1,7 +1,7 @@
 
 -- +goose Up
 CREATE TABLE tweets (
-  Id integer not null primary key autoincrement,
+  Id serial not null primary key,
   CreatedAt text,
   TwitterId integer,
   Text text,
