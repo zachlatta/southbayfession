@@ -1,4 +1,4 @@
-# Ye Be Warned
+# Ye Be Warned ![Analytics](https://ga-beacon.appspot.com/UA-34529482-6/southbayfession/readme?pixel)
 
 Abandon all hope, ye who enter here. The code is bad. The site is bad. But it
 _works_. I say that tentatively.
